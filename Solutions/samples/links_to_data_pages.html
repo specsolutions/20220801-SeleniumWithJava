@@ -1,0 +1,98 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>Links to Data Pages</title>
+    <link rel="stylesheet" href="https://testpages.herokuapp.com/css/testpages.css">
+    <!-- HEAD -->
+
+</head>
+
+<body>
+
+<div class="page-body">
+
+
+    <div class="page-navigation">
+        <a href="https://testpages.herokuapp.com/styled/index.html">Index</a>
+    </div>
+
+    <h1>Links to Data Pages</h1>
+
+    <div class="explanation">
+        <p>Links & buttons that navigate to different pages directly or asynchronously.
+        </p>
+    </div>
+
+    <div>
+
+        <ul>
+            <li>
+                <a id="link-to-data" href="page_with_data.html">Page with Embedded Data</a>
+            </li>
+            <li>
+                <a id="link-to-dynamic-data" href="page_with_dynamic_data.html">Page with Dynamic Data</a>
+            </li>
+            <li>
+                <a id="link-to-dynamic-async-data" href="page_with_dynamic_async_data.html">Page with Dynamic Async Data</a>
+            </li>
+            <li>
+                <a id="link-to-event-result-data" href="page_with_event_result_data.html">Page with Event Result Data</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a id="js-link-to-data" href="#" onclick="jsLinkClick('page_with_data.html')">Async Link to Page with Embedded Data</a>
+            </li>
+            <li>
+                <a id="js-link-to-dynamic-data" href="#" onclick="jsLinkClick('page_with_dynamic_data.html')">Async Link to Page with Dynamic Data</a>
+            </li>
+            <li>
+                <a id="js-link-to-dynamic-async-data" href="#" onclick="jsLinkClick('page_with_dynamic_async_data.html')">Async Link to Page with Dynamic Async Data</a>
+            </li>
+        </ul>
+
+        <form action="page_with_data.html" method="get">
+            <input type="submit" id="submit-to-data" value="Page with Data" />
+        </form>
+        <form action="page_with_dynamic_data.html" method="get">
+            <input type="submit" id="submit-to-dynamic-data" value="Page with Dynamic Data" />
+        </form>
+        <form action="page_with_dynamic_async_data.html" method="get">
+            <input type="submit" id="submit-to-dynamic-async-data" value="Page with Dynamic Async Data" />
+        </form>
+
+        <form onsubmit="return jsLinkClick('page_with_data.html')">
+            <input type="submit" id="js-submit-to-data" value="Async Page with Data" />
+        </form>
+        <form onsubmit="return jsLinkClick('page_with_dynamic_data.html')">
+            <input type="submit" id="js-submit-to-dynamic-data" value="Async Page with Dynamic Data" />
+        </form>
+        <form onsubmit="return jsLinkClick('page_with_dynamic_async_data.html')">
+            <input type="submit" id="js-submit-to-dynamic-async-data" value="Async Page with Dynamic Async Data" />
+        </form>
+    </div>
+
+
+    <div class="page-footer">
+        <p><a target="_blank" rel="noopener noreferrer" href="https://eviltester.com">EvilTester.com</a>,
+            <a target="_blank" rel="noopener noreferrer" href="https://compendiumdev.co.uk">Compendium Developments</a></p>
+    </div>
+
+</div>
+
+<script language="javascript">
+function jsLinkClick(pageName){
+    setTimeout(() => {
+        console.log("redirect...")
+        window.location.href = pageName;    
+    }, 1000);
+    return false;
+}
+
+</script>
+
+</body>
+
+
+</html>

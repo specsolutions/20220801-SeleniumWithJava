@@ -1,0 +1,102 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>Page with Event Result Data</title>
+    <link rel="stylesheet" href="https://testpages.herokuapp.com/css/testpages.css">
+    <!-- HEAD -->
+
+</head>
+
+<body>
+
+<div class="page-body">
+
+
+    <div class="page-navigation">
+        <a href="https://testpages.herokuapp.com/styled/index.html">Index</a>
+    </div>
+
+    <h1>Page with Event Result Data</h1>
+
+    <div class="explanation">
+        <p>An example of a page that has dynamic data populated by a button click.
+        </p>
+    </div>
+
+    <div class="centered">
+
+        <style>
+            #the-data {
+                margin: auto;
+                height: 100px;
+                line-height: 100px;
+                background-color: green;
+                font-size: 30pt;
+                color: white;
+            }
+            .heart {
+                color: red;
+                font-size: 30pt;
+            }
+        </style>
+
+        <p>
+            The result is...
+        </p>
+
+        <div id="data-placeholder">
+            
+        </div>
+
+        <h2>Generate Data with Button</h2>
+        <input type="button" id="get-data-button" value="Get Data with Button" onclick="getData()" />
+
+        <h2>Generate Data with Form</h2>
+        <form onsubmit="return getData()">
+            <input type="text" name="someText" />
+            <input type="submit" id="get-data-submit" />
+        </form>
+    </div>
+
+
+    <div class="page-footer">
+        <p><a target="_blank" rel="noopener noreferrer" href="https://eviltester.com">EvilTester.com</a>,
+            <a target="_blank" rel="noopener noreferrer" href="https://compendiumdev.co.uk">Compendium Developments</a></p>
+    </div>
+
+</div>
+
+<script language="javascript">
+
+function getData() {
+    document.getElementsByTagName('body')[0].setAttribute("data-action-in-progress", "1")
+    document.getElementById('data-placeholder').innerHTML = 'loading...';
+
+    setTimeout(function() {
+        document.getElementById('data-placeholder').innerHTML = '';
+        var dataDiv = document.createElement('div');
+        dataDiv.setAttribute('id', 'the-data');
+        dataDiv.appendChild(document.createTextNode("42"));
+        document.getElementById('data-placeholder').appendChild(dataDiv);
+
+        const heartCount = Math.floor(Math.random() * 4);
+        for (let index = 0; index < heartCount; index++) {
+            var heartDiv = document.createElement('span');
+            heartDiv.setAttribute('class', 'heart');
+            heartDiv.appendChild(document.createTextNode("♥"));
+            document.getElementById('data-placeholder').appendChild(heartDiv);
+        }
+
+        console.log("result received");
+        document.getElementsByTagName('body')[0].setAttribute("data-action-in-progress", "0")
+    }, 1000);
+    return false;
+}
+
+</script>
+
+</body>
+
+
+</html>

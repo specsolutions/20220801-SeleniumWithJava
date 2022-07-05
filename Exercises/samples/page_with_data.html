@@ -1,0 +1,62 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>Page with Embedded Data</title>
+    <link rel="stylesheet" href="https://testpages.herokuapp.com/css/testpages.css">
+    <!-- HEAD -->
+
+</head>
+
+<body>
+
+<div class="page-body">
+
+
+    <div class="page-navigation">
+        <a href="https://testpages.herokuapp.com/styled/index.html">Index</a>
+    </div>
+
+    <h1>Page with Embedded Data</h1>
+
+    <div class="explanation">
+        <p>An example of a page that has embedded data
+        </p>
+    </div>
+
+    <div class="centered">
+
+        <style>
+            #the-data {
+                margin: auto;
+                height: 100px;
+                line-height: 100px;
+                background-color: green;
+                font-size: 30pt;
+                color: white;
+            }
+        </style>
+
+        <p>
+            The result is...
+        </p>
+
+        <div id="data-placeholder">
+            <div id="the-data">42</div>
+        </div>
+    </div>
+
+
+    <div class="page-footer">
+        <p><a target="_blank" rel="noopener noreferrer" href="https://eviltester.com">EvilTester.com</a>,
+            <a target="_blank" rel="noopener noreferrer" href="https://compendiumdev.co.uk">Compendium Developments</a></p>
+    </div>
+
+</div>
+
+<script language="javascript">
+    document.getElementsByTagName('body')[0].setAttribute("data-page-loaded", "1")
+</script>
+
+</body>
+</html>

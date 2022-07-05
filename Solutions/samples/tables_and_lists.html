@@ -1,0 +1,171 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>Tables and Lists</title>
+    <link rel="stylesheet" href="https://testpages.herokuapp.com/css/testpages.css">
+    <!-- HEAD -->
+
+</head>
+
+<body>
+
+<div class="page-body">
+
+
+    <div class="page-navigation">
+        <a href="https://testpages.herokuapp.com/styled/index.html">Index</a>
+    </div>
+
+    <h1>Tables and Lists</h1>
+
+    <div class="explanation">
+        <p>An example of an HTML Table with data and action buttons
+        </p>
+    </div>
+
+    <div class="centered">
+
+        <div id="tablehere">
+
+            <style>
+                table{
+                    width: 100%;
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+                table th{
+                    background-color: gainsboro;
+                    font-weight: bold;
+                }
+                th, td {
+                    border: 1px solid black;
+                    line-height: 150%;
+                }
+                td.table-actions {
+                    width: 170px;
+                }
+            </style>
+
+            <table id="mytable">
+                <caption>This table has data</caption>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-entry-for-user="34A">
+                        <td class="table-data" data-user-id="34A">Alan</td>
+                        <td class="table-data data-amount">12</td>
+                        <td class="table-actions"><a href="#send-reminder-34A" class="reminder-action">[send reminder]</a></td>
+                    </tr>
+                    <tr data-entry-for-user="45B">
+                        <td class="table-data" data-user-id="45B">Bob</td>
+                        <td class="table-data data-amount">23.4</td>
+                        <td class="table-actions"><a href="#send-reminder-45B" class="reminder-action">[send reminder]</a></td>
+                    </tr>
+                    <tr data-entry-for-user="56C">
+                        <td class="table-data" data-user-id="56C">Cindy</td>
+                        <td class="table-data data-amount">33.3</td>
+                        <td class="table-actions"><a href="#send-reminder-56C" class="reminder-action">[send reminder]</a></td>
+                    </tr>
+                    <tr data-entry-for-user="67D">
+                        <td class="table-data" data-user-id="67D">Douglas</td>
+                        <td class="table-data data-amount">42</td>
+                        <td class="table-actions">
+                            <a href="#send-reminder-67D" class="reminder-action">[send reminder]</a>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="table-data">data in nested table</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div id="listhere">
+            <style>
+                .data-list {
+                    list-style-type: none;
+                }
+                .data-list li {
+                    width: 100%;
+                    line-height: 40px;
+                }
+                .list-data {
+                    display: inline-block;
+                    border-top: 1px blue solid;
+                    border-bottom: 1px blue solid;
+                    border-right: 1px blue solid;
+                    width: 20%;
+                    margin: 0px;
+                }
+                .list-data:first-of-type {
+                    border-left: 1px blue solid;
+                }
+            </style>
+            <p>A similar structure implemented with UL/LI elements.</p>
+            <ul id="mylist" class="data-list">
+                <li data-entry-for-user="34A">
+                    <span class="list-data" data-user-id="34A">
+                        Alan
+                    </span><span class="list-data data-amount">
+                        12
+                    </span>
+                    <span class="list-action">
+                        <a href="#send-reminder-34A" class="reminder-action">[send reminder]</a>
+                    </span>
+                </li>
+                <li data-entry-for-user="45B">
+                    <span class="list-data" data-user-id="45B">
+                        Bob
+                    </span><span class="list-data data-amount">
+                        23.4
+                    </span>
+                    <span class="list-action">
+                        <a href="#send-reminder-45B" class="reminder-action">[send reminder]</a>
+                    </span>
+                </li>
+                <li data-entry-for-user="56C">
+                    <span class="list-data" data-user-id="56C">
+                        Cindy
+                    </span><span class="list-data data-amount">
+                        33.3
+                    </span>
+                    <span class="list-action">
+                        <a href="#send-reminder-56C" class="reminder-action">[send reminder]</a>
+                    </span>
+                </li>
+                <li data-entry-for-user="67D">
+                    <span class="list-data" data-user-id="67D">
+                        Douglas
+                    </span><span class="list-data data-amount">
+                        42
+                    </span>
+                    <span class="list-action">
+                        <a href="#send-reminder-67D" class="reminder-action">[send reminder]</a>
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <div class="page-footer">
+        <p><a target="_blank" rel="noopener noreferrer" href="https://eviltester.com">EvilTester.com</a>,
+            <a target="_blank" rel="noopener noreferrer" href="https://compendiumdev.co.uk">Compendium Developments</a></p>
+    </div>
+
+</div>
+
+
+</body>
+</html>
